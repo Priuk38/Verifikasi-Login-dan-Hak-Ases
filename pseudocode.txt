@@ -1,0 +1,26 @@
+ALGORITMA
+    Verifikasi Login dan Hak Akses
+DEKLARASI
+    admin_user, admin_pass, reg_user, reg_pass, username, password, access
+DESKRIPSI
+    admin_user <- Phanes
+    admin_pass <- 454635
+    reg_user <- Pauline
+    reg_pass <- 306748
+    PRINT("Verifikasi Login dan Hak Akses")
+    PRINT("Masukkan Username dan Password anda")
+    Input username
+    Input password
+    IF (username = admin_user AND password = admin_pass) OR (username = reg_user AND password = reg_pass) THEN
+        PRINT("Login Berhasil")
+        Input access
+        IF access = admin THEN
+            PRINT("Anda Adalah Admin")
+        ELSE IF access = user THEN
+            PRINT("Anda Hanyalah Pengguna Biasa")
+        ELSE
+            PRINT("Unidentified")
+        END IF
+    ELSE
+        PRINT("User Tidak Ditemukan)
+    END IF
