@@ -1,7 +1,7 @@
 ALGORITMA
     Verifikasi Login dan Hak Akses
 DEKLARASI
-    admin_user, admin_pass, reg_user, reg_pass, username, password, access
+    admin_user, admin_pass, reg_user, reg_pass, username, password, access_level
 DESKRIPSI
     admin_user <- Phanes
     admin_pass <- 454635
@@ -11,16 +11,16 @@ DESKRIPSI
     PRINT("Masukkan Username dan Password anda")
     Input username
     Input password
-    IF (username = admin_user AND password = admin_pass) OR (username = reg_user AND password = reg_pass) THEN
+    IF username == admin_user AND password == admin_pass OR username == reg_user AND password == reg_pass THEN
         PRINT("Login Berhasil")
-        Input access
-        IF access = admin THEN
-            PRINT("Anda Adalah Admin")
-        ELSE IF access = user THEN
-            PRINT("Anda Hanyalah Pengguna Biasa")
+        Input access_level
+        IF access_level == "admin" AND username == admin_user THEN
+            PRINT("Selamat Datang Admin")
+        ELSE IF access_level == "user" and username == reg_user THEN
+            PRINT("Selamat Datang User")
         ELSE
-            PRINT("Unidentified")
+            PRINT("Hak Akses Tidak Sesuai Dengan Username")
         END IF
     ELSE
-        PRINT("User Tidak Ditemukan)
+        PRINT("Login Gagal")
     END IF
